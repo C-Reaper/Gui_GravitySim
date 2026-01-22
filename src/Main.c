@@ -2,6 +2,7 @@
 #include "/home/codeleaded/System/Static/Library/Lib3D_Cube.h"
 #include "/home/codeleaded/System/Static/Library/Lib3D_Mathlib.h"
 #include "/home/codeleaded/System/Static/Library/Lib3D_Mesh.h"
+#include "/home/codeleaded/System/Static/Library/Lib3D_World3D.h"
 
 #define G		1.0f
 #define FAKTOR	0.01f
@@ -262,7 +263,7 @@ void Update(AlxWindow* w){
 
 	Clear(LIGHT_BLUE);
 
-	World3D_update(&world,cam.p,(Vec2){ GetWidth(),GetHeight() });
+	World3D_Update(&world,cam.p,(Vec2){ GetWidth(),GetHeight() });
 
 	for(int i = 0;i<world.trisOut.size;i++){
 		Tri3D* t = (Tri3D*)Vector_Get(&world.trisOut,i);
