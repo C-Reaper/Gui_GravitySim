@@ -104,9 +104,7 @@ World3D world;
 int Mode = 0;
 int Menu = 0;
 float Speed = 4.0f;
-
 Vector spheres;
-
 
 void Menu_Set(int m){
 	if(Menu==0 && m==1){
@@ -294,7 +292,7 @@ void Delete(AlxWindow* w){
 }
 
 int main(){
-    if(Create("Gravity Simulation",2500,1200,1,1,Setup,Update,Delete))
+    if(Create("Gravity Simulation",2500,1440,1,1,Setup,Update,Delete))
         Start();
     return 0;
 }
