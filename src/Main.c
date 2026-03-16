@@ -292,7 +292,7 @@ void Delete(AlxWindow* w){
 }
 
 int main(){
-    if(Create("Gravity Simulation",2500,1440,1,1,Setup,Update,Delete))
+	if(Create("Gravity Simulation",2500,1440,1,1,Setup,Update,Delete))
         Start();
     return 0;
 }
