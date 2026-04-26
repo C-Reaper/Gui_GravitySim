@@ -1,193 +1,71 @@
-# Gui_GravitySim
+# Project README
 
+## Overview
+The Gravity Simulation project is a C application designed to visualize the gravitational forces between multiple objects in a 3D space. The simulation uses a simple model where each object follows Newton's laws of motion under gravity.
 
-## Project Overview
+## Features
+- **Gravitational Simulation**: Objects move according to their masses and positions.
+- **Real-time Rendering**: Uses a basic 3D rendering engine to display the objects in a window.
+- **Camera Control**: Allows user interaction with the camera to rotate, zoom, and pan through the simulation.
+- **Debugging Information**: Displays the current position of each object and some statistics about the rendering process.
 
-This project implements specialized functionality related to gravitysim.
-
-## Core Components
-
-### Main Functionality
-- Implements core algorithms for gravitysim
-- Efficient data structures
-- Optimized performance
-- Clean code organization
-
-### Technical Features
-- C/C++ implementation
-- Dynamic memory management
-- Platform-independent design
-- Real-time capable
-
-### Architecture
-- Module separation
-- Clear interface design
-- Proper abstraction layers
-- Extensible design
-
-## Use Cases
-- Production systems
-- Educational purposes
-- Research applications
-- Performance-critical operations
-
-## Performance Characteristics
-- Optimized algorithms
-- Efficient memory usage
-- Scalable architecture
-- Minimal overhead
-
-## Implementation Quality
-- Well-organized code
-- Meaningful naming
-- Proper error handling
-- Memory management
-
-## Build and Deployment
-- Standard C/C++ compilation
-- Makefile-based building
-- Cross-platform support
-- Easy integration
-
-
-## Building the Project
-
-### Prerequisites
-- C/C++ Compiler (GCC, Clang, or MSVC)
-- Make utility
-- Standard development tools
-
-### Build Steps
-
-1. Navigate to project directory:
-```bash
-cd Gui_GravitySim
-```
-
-2. Build the project:
-```bash
-make -f Makefile.(os) all
-```
-
-3. For clean rebuild:
-```bash
-make -f Makefile.(os) clean
-make -f Makefile.(os) all
-```
-
-4. If there are ./bin and ./libs directories, build libs with:
-```bash
-make -f Makefile.(os) cleanlib
-make -f Makefile.(os) lib
-```
-
-### Build Options
-```bash
-make -f Makefile.(os) all         # build output
-make -f Makefile.(os) do        # build + exe output
-make -f Makefile.(os) clean   # Remove build artifacts
-```
-
-## Running the Project
-
-Execute the compiled binary:
-
-```bash
-./build/Main(.exe)
-```
-
-Or using make:
-```bash
-make -f Makefile.(os) exe
-```
-
-## Project Organization
-
+## Project Structure
 ```
 Gui_GravitySim/
-├── src/
-│   ├── Main.c          # Entry point
-│   └── *.c             # Implementation files
-├── Makefile            # Build configuration
+├── build/              # .exe files produced by Main.c
+├── src/                # Source code directory
+│   ├── Main.c          # Entry point of the application
+│   └── *.h             # Header files for various components
+├── Makefile.linux      # Linux Build configuration
+├── Makefile.windows    # Windows Build configuration
+├── Makefile.wine       # Wine Build configuration
+├── Makefile.web        # Emscripten Build configuration
 └── README.md           # This file
 ```
 
-## Technical Details
+### Prerequisites
+- C/C++ Compiler and Debugger (GCC, Clang)
+- Make utility
+- Standard development tools
+- Libraries needed in specific projects (X11 for Linux, user32, gdi32, winmm for Windows)
 
-### Language: C/C++
-- Performance-oriented
-- Direct hardware access where needed
-- Memory efficient
-- Widely portable
+## Build & Run
+The project supports building on different platforms using the provided Makefiles.
 
-### Key Technologies
-- Standard C library
-- System-specific libraries as needed
-- Algorithm optimization
-- Efficient data structures
+### Building on Linux
+```sh
+cd Gui_GravitySim/
+make -f Makefile.linux all
 
-### Code Quality
-- Clean, readable implementation
-- Proper error handling
-- Resource management
-- Well-documented algorithms
+# To run the application:
+./build/Main
+```
 
-## Development Notes
+### Building on Windows
+```sh
+cd Gui_GravitySim/
+make -f Makefile.windows all
 
-### Architecture Decisions
-- Modular design for reusability
-- Efficient algorithms for performance
-- Clear separation of concerns
-- Extensible structure
+# To run the application:
+.\build\Main.exe
+```
 
-### Performance Optimizations
-- Algorithm efficiency
-- Memory layout optimization
-- Cache-conscious programming
-- Minimal overhead
+### Building on Wine
+```sh
+cd Gui_GravitySim/
+make -f Makefile.wine all
 
-### Portability
-- Cross-platform compatible
-- Platform-specific optimizations where possible
-- Standard library usage
-- No external dependencies (where feasible)
+# To run the application:
+wine build/Main.exe
+```
 
-## Troubleshooting
+### Building for WebAssembly
+```sh
+cd Gui_GravitySim/
+make -f Makefile.web all
 
-### Build Issues
-- Ensure compiler is installed
-- Check file paths and permissions
-- Verify Make installation
-- Review compiler error messages
+# To run the application in a web browser:
+emrun --no_browser --port 8080 build/index.html
+```
 
-### Runtime Issues
-- Check input data validity
-- Verify file accessibility
-- Ensure sufficient memory
-- Review output format
-
-### Performance Issues
-- Check compiler optimization flags
-- Profile hot code paths
-- Review algorithm complexity
-- Consider input size
-
-## Future Improvements
-
-Potential enhancements:
-- Additional optimization opportunities
-- Extended functionality
-- Platform-specific optimizations
-- Performance profiling
-
-## References
-
-For technical background:
-- Algorithm textbooks
-- Computer science references
-- Language documentation
-- Online educational resources
-
----
-
-*Project implementing practical algorithms and data structures in C/C++*
+These commands will set up and compile the project, producing the necessary executable file(s) for the specified platform.
